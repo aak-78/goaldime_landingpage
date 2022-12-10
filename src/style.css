@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Lato:wght@300;400;700;900&family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap');
+
+:root {
+  --button-color: hsla(220, 100%, 67.8%, 1);
+  --circle-color: hsla(220, 100%, 97%, 1);
+}
+
+.hero__bgimage {
+  /* width: calc(100vw - 4rem); */
+  min-height: calc(160px + 100vw * 0.5);
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  filter: drop-shadow(0px 4px 50px rgba(0, 0, 0, 0.25));
+}
+
+.btn__arrow {
+  filter: brightness(0) invert(1);
+}
+
+.filter-dropShadow {
+  filter: drop-shadow(0px 4px 50px rgba(0, 0, 0, 0.2));
+  border-radius: 6px;
+}
+
+
+.slider{
+  width: 100%;
+  height: 100%;
+  background-color: #e5e7eb;
+  position: absolute;
+  border-radius: 20px;
+}
+
+
+  .slider::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    border-radius: 50%;
+    /* box-shadow: inset 28px -4px 0px 0px var(--light); */
+    background-color: white;
+    transition: 0.3s;
+  }
+
+  input:checked ~ .slider::before {
+    transform: translateX(26px);
+    box-shadow: none;
+  }
+
+  input:checked ~ .slider {
+    background-color: hsla(220, 100%, 67.8%, 1);
+  }
+
